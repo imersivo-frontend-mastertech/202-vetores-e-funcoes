@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+			<ul></ul>
+
+			<script type="text/javascript">
+			/**
+				O seguinte programa imprime o maior número presente no vetor 'numeros'
+			*/
+
+
+			let numeros = [60, 70, -10, 90, 900, 1];
+
+			let maior;
+
+			let cont = false;
+
+			let criarItem = (numero) =>{
+
+				let item = document.createElement('li');
+
+				item.innerHTML = numero;
+
+				let lista = document.querySelector('ul');
+
+				lista.appendChild(item);
+
+
+			}
+
+
+			for (let numero of numeros){
+
+				console.log(`numero: ${numero}`);
+				criarItem(numero);
+
+				if(cont == false){
+					maior = numero;
+					console.log(`primeira vez, maior = ${maior}`);
+					cont = true;
+
+				} else{
+
+					if( numero > maior){
+
+						console.log(`${numero} é maior que ${maior}`);
+
+						maior = numero;
+
+						console.log(`portanto ${maior} foi atualizada para ${numero}`);
+					}
+				}
+			}
+
+			console.log(`o maior numero encontrado foi ${maior}`);
+
+
+
+
+
+
+
+			</script>
+	</body>
+</html>
